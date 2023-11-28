@@ -1,0 +1,58 @@
+:root {
+  /* Global variables to be defined here */
+  --color-background-primary: #4297a0;
+  --color-secondary: #2f5061;
+  --color-primary: #e57f84;
+  --color-white: #fff;
+  --color-black: #111;
+  --color-background: #f4eae6;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  font-family: "Roboto Flex", sans-serif;
+}
+html,
+body {
+  height: 100%;
+  background-color: var(--color-background);
+}
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  color: var(--color-secondary);
+  font-family: "Roboto Flex", sans-serif;
+}
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+#root,
+#__next {
+  isolation: isolate;
+}

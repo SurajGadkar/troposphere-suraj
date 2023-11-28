@@ -1,5 +1,6 @@
 // NationalityDropdown.js
 import React, { useState } from "react";
+import styles from "./NationalityDropDown.module.css";
 
 const NationalityDropdown = ({ options, onSelect }) => {
   const [selectedOption, setSelectedOption] = useState("");
@@ -11,7 +12,7 @@ const NationalityDropdown = ({ options, onSelect }) => {
   };
 
   return (
-    <div>
+    <div className={styles.main__container}>
       <label>Select Nationality:</label>
       <select value={selectedOption} onChange={handleSelectChange}>
         <option value="" disabled>

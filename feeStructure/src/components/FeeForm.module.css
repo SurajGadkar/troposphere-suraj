@@ -1,0 +1,55 @@
+.main__container {
+  display: flex;
+  flex-direction: column;
+  min-height: 250px;
+  justify-content: space-around;
+  align-items: center;
+  padding: 12px 24px;
+}
+
+.feetype__select__container {
+  height: 80px;
+  width: 200px;
+  background-color: var(--color-secondary);
+  color: var(--color-primary);
+  border: 1px solid var(--color-primary);
+  border-radius: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 4px 8px;
+  margin: 0 12px;
+}
+
+.dropdown__menu__container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 24px;
+  min-width: 90%;
+}
+
+.btn {
+  height: 36px;
+  width: 129px;
+  background-color: var(--color-secondary);
+  color: var(--color-primary);
+  border-radius: 0.8rem;
+  color: var(--color-primary);
+}
+
+.btn:hover {
+  cursor: pointer;
+  color: var(--color-white);
+}
+
+.btn__container {
+  display: flex;
+  width: 420px;
+  border: 1px soli black;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 24px;
+}

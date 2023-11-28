@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import FeeForm from "./components/FeeForm";
 import { feeStructure } from "./fee_structure";
-
+import styles from "./App.module.css";
 const App = () => {
   const [selectedFee, setSelectedFee] = useState("");
   const [selectedNationality, setSelectedNationality] = useState("");
@@ -11,11 +11,8 @@ const App = () => {
   const [course, setCourse] = useState("");
 
   const [DueFee, setDueFee] = useState(0);
-  console.log(course);
 
   const calculateFee = () => {
-    // Add logic to calculate the resulting fee amount based on the selected options
-    // using the feeStructure object
     const feeAmount =
       feeStructure[selectedFee][selectedNationality][selectedCourse][
         selectedLevel
@@ -23,8 +20,17 @@ const App = () => {
     setDueFee(feeAmount);
   };
 
+  const cleanUp = () => {
+    setSelectedFee("");
+    setSelectedNationality("");
+    setSelectedCourse("");
+    setSelectedLevel("");
+    setCourse("");
+    setDueFee(0);
+  };
+
   return (
-    <div>
+    <div className={styles.app_main_container}>
       <h1>University Fee Calculator</h1>
 
       <FeeForm
@@ -39,18 +45,34 @@ const App = () => {
         onSelectCourse={setSelectedCourse}
         onSelectLevel={setSelectedLevel}
         onCalculateFee={calculateFee}
+        onCleanUp={cleanUp}
+        course={course}
       />
 
       {selectedFee && (
-        <div>
-          <h2>Selected Fee: {selectedFee}</h2>
-          <h3>Selected Nationality: {selectedNationality}</h3>
+        <div className={styles.display__container}>
+          <h3>
+            Selected Fee:{" "}
+            <span className={styles.primary_color}>{selectedFee}</span>
+          </h3>
+          <h3>
+            Selected Nationality:{" "}
+            <span className={styles.primary_color}>{selectedNationality}</span>{" "}
+          </h3>
           <h3>
             Selected Course:{" "}
-            {selectedCourse === "ALL_COURSES" ? selectedCourse : course}
+            <span className={styles.primary_color}>
+              {selectedCourse === "ALL_COURSES" ? selectedCourse : course}
+            </span>
           </h3>
-          <h3>Selected Level: {selectedLevel}</h3>
-          <h1>Amount to be paid : {DueFee}</h1>
+          <h3>
+            Selected Level:{" "}
+            <span className={styles.primary_color}>{selectedLevel}</span>
+          </h3>
+          <h1>
+            Amount to be paid :{" "}
+            <span className={styles.primary_color}>{DueFee}</span>
+          </h1>
         </div>
       )}
     </div>

@@ -1,5 +1,6 @@
 // LevelDropdown.js
 import React, { useState } from "react";
+import styles from "./LevelDropdown.module.css";
 
 const LevelDropdown = ({ options, onSelect }) => {
   const [selectedOption, setSelectedOption] = useState("");
@@ -11,7 +12,7 @@ const LevelDropdown = ({ options, onSelect }) => {
   };
 
   return (
-    <div>
+    <div className={styles.main__container}>
       <label>Select Level:</label>
       <select value={selectedOption} onChange={handleSelectChange}>
         <option value="" disabled>

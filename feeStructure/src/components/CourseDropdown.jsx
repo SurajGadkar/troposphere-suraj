@@ -1,6 +1,6 @@
 // CourseDropdown.js
 import React, { useState, useEffect } from "react";
-
+import styles from "./CourseDropdown.module.css";
 const CourseDropdown = ({ options, onSelect, setCourse }) => {
   const [selectedOption, setSelectedOption] = useState("");
   const [selectCourse, setSelectCourse] = useState("");
@@ -20,7 +20,7 @@ const CourseDropdown = ({ options, onSelect, setCourse }) => {
 
   return (
     <>
-      <div>
+      <div className={styles.main__container}>
         <label>Select Course:</label>
         <select value={selectCourse} onChange={handleSelectChange}>
           <option value="" disabled>
@@ -32,21 +32,21 @@ const CourseDropdown = ({ options, onSelect, setCourse }) => {
             </option>
           ))}
         </select>
-      </div>
-      {selectedOption && (
-        <div>
-          <select value={selectCourse} onChange={handleCourse}>
-            <option value="" disabled>
-              Select a course
-            </option>
-            {courseOptions.map((option) => (
-              <option key={option} value={option}>
-                {option}
+        {selectedOption && (
+          <div className={styles.course}>
+            <select value={selectCourse} onChange={handleCourse}>
+              <option value="" disabled>
+                Select a course
               </option>
-            ))}
-          </select>
-        </div>
-      )}
+              {courseOptions.map((option) => (
+                <option key={option} value={option}>
+                  {option}
+                </option>
+              ))}
+            </select>
+          </div>
+        )}
+      </div>
     </>
   );
 };
