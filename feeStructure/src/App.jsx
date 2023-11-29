@@ -20,7 +20,8 @@ const App = () => {
       ].amount;
     setDueFee(feeAmount);
   };
-
+  console.log(selectedLevel);
+  console.log(level);
   const cleanUp = () => {
     setSelectedFee("");
     setSelectedNationality("");
@@ -72,7 +73,7 @@ const App = () => {
           <h3>
             Selected Level:{" "}
             <span className={styles.primary_color}>
-              {selectedLevel === "ALL_LEVEL" ? selectedCourse : level}
+              {selectedFee === "Exam Fee" ? level : selectedLevel}
             </span>
           </h3>
           <h1>
