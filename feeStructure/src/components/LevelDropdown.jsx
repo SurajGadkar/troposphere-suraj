@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import styles from "./LevelDropdown.module.css";
 
-const LevelDropdown = ({ options, onSelect, setLevel, level }) => {
+const LevelDropdown = ({ options, onSelect, setLevel, level, selectedFee }) => {
   const [selectedOption, setSelectedOption] = useState("");
 
   const handleSelectChange = (event) => {
@@ -31,9 +31,9 @@ const LevelDropdown = ({ options, onSelect, setLevel, level }) => {
           </option>
         ))}
       </select>
-      {selectedOption && (
+      {selectedOption && selectedFee === "Exam Fee" && (
         <div>
-          <select value={selectedOption} onChange={handleLevel}>
+          <select value={level} onChange={handleLevel}>
             <option value="" disabled>
               Select a level
             </option>

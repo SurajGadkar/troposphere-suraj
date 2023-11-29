@@ -59,13 +59,14 @@ const FeeForm = ({
               onSelect={onSelectLevel}
               setLevel={setLevel}
               level={level}
+              selectedFee={selectedFee}
             />
           )}
         </div>
       )}
 
       <div className={styles.btn__container}>
-        {selectedLevel && level && (
+        {selectedLevel && (
           <>
             <button className={styles.btn} onClick={onCalculateFee}>
               Calculate Fee
