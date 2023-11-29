@@ -58,6 +58,7 @@ const FeeForm = ({
               )}
               onSelect={onSelectLevel}
               setLevel={setLevel}
+              level={level}
             />
           )}
         </div>

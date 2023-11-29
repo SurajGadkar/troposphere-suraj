@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import styles from "./LevelDropdown.module.css";
 
-const LevelDropdown = ({ options, onSelect, setLevel }) => {
+const LevelDropdown = ({ options, onSelect, setLevel, level }) => {
   const [selectedOption, setSelectedOption] = useState("");
 
   const handleSelectChange = (event) => {
@@ -15,7 +15,7 @@ const LevelDropdown = ({ options, onSelect, setLevel }) => {
 
   const handleLevel = (e) => {
     setLevel(e.target.value);
-    setSelectedOption("ALL_LEVEL");
+    //setSelectedOption("ALL_LEVEL");
   };
 
   return (
