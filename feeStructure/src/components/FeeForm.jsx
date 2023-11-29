@@ -20,6 +20,7 @@ const FeeForm = ({
   setCourse,
   onCleanUp,
   course,
+  level,
   setLevel,
 }) => {
   const fees = Object.keys(feeStructure);
@@ -63,7 +64,7 @@ const FeeForm = ({
       )}
 
       <div className={styles.btn__container}>
-        {selectedLevel && (
+        {selectedLevel && level && (
           <>
             <button className={styles.btn} onClick={onCalculateFee}>
               Calculate Fee

@@ -49,6 +49,7 @@ const App = () => {
         onCalculateFee={calculateFee}
         onCleanUp={cleanUp}
         course={course}
+        level={level}
       />
 
       {selectedFee && (
