@@ -15,6 +15,7 @@ const LevelDropdown = ({ options, onSelect, setLevel }) => {
 
   const handleLevel = (e) => {
     setLevel(e.target.value);
+    setSelectedOption("ALL_LEVEL");
   };
 
   return (
