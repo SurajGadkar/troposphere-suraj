@@ -20,6 +20,7 @@ const FeeForm = ({
   setCourse,
   onCleanUp,
   course,
+  setLevel,
 }) => {
   const fees = Object.keys(feeStructure);
 
@@ -55,6 +56,7 @@ const FeeForm = ({
                 feeStructure[selectedFee][selectedNationality][selectedCourse]
               )}
               onSelect={onSelectLevel}
+              setLevel={setLevel}
             />
           )}
         </div>

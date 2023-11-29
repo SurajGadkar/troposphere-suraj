@@ -9,6 +9,7 @@ const App = () => {
   const [selectedCourse, setSelectedCourse] = useState("");
   const [selectedLevel, setSelectedLevel] = useState("");
   const [course, setCourse] = useState("");
+  const [level, setLevel] = useState("");
 
   const [DueFee, setDueFee] = useState(0);
 
@@ -40,6 +41,7 @@ const App = () => {
         selectedCourse={selectedCourse}
         selectedLevel={selectedLevel}
         setCourse={setCourse}
+        setLevel={setLevel}
         onSelectFee={setSelectedFee}
         onSelectNationality={setSelectedNationality}
         onSelectCourse={setSelectedCourse}
@@ -67,7 +69,9 @@ const App = () => {
           </h3>
           <h3>
             Selected Level:{" "}
-            <span className={styles.primary_color}>{selectedLevel}</span>
+            <span className={styles.primary_color}>
+              {selectedLevel === "ALL_LEVEL" ? selectedCourse : level}
+            </span>
           </h3>
           <h1>
             Amount to be paid :{" "}
