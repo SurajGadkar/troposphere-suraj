@@ -27,6 +27,7 @@ const App = () => {
     setSelectedCourse("");
     setSelectedLevel("");
     setCourse("");
+    setLevel("");
     setDueFee(0);
   };
 
